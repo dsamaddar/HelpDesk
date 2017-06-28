@@ -1,0 +1,59 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="frmAILoginNew.aspx.vb" Inherits="frmAILoginNew" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>.:Admin Inventory:Login:.</title>
+    <link href="Sources/css/Loginstyle.css" rel="stylesheet" type="text/css" />
+   </head>
+<body>
+    <form id="form1" runat="server">
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                 <fieldset>
+		    <legend>Log in</legend>
+			
+			<label for="login">Email</label>
+            <asp:TextBox ID="txtUserID" runat="server"></asp:TextBox>
+            <div class="clear"></div>
+			
+			<label for="password">Password</label>&nbsp;
+            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+			<div class="clear"></div>
+			
+			<label for="remember_me" style="padding: 0;">Remember me?</label>
+			<input type="checkbox" id="remember_me" style="position: relative; top: 3px; margin: 0; " name="remember_me"/>
+			<div class="clear"></div>
+			<div style="float:left">
+			    <asp:Button ID="btnLogin" runat="server" Text="Login" style="margin: -20px 0 0 287px;" class="button"  Width="100px" />
+			</div>
+			
+			
+			<br />
+			</fieldset>
+            </td>
+        </tr>
+    </table>
+           
+
+    
+    </form>
+</body>
+</html>

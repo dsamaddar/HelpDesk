@@ -1,0 +1,110 @@
+﻿<%@ Master Language="VB" CodeFile="AIMasterGen.master.vb" Inherits="AIMasterGen" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <link href="Sources/css/AICssClass.css" rel="stylesheet" type="text/css" />
+    <link href="Sources/css/ValidatorStyle.css" rel="stylesheet" type="text/css" />
+    <link href="Sources/css/GridStyle.css" rel="stylesheet" type="text/css" />
+    <link href="Sources/css/Title.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #header, #footer
+        {
+            margin: 0;
+            padding: 0;
+            color: #996600;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table style="width: 100%;">
+        <tr align="center">
+            <td style="width: 10%">
+            </td>
+            <td style="width: 80%">
+                <table style="width: 100%">
+                    <tr>
+                        <td align="left">
+                            <asp:Label ID="lblLoggedInUser" runat="server" Font-Bold="True" Font-Names="Verdana"
+                                Font-Size="11pt" ForeColor="#996600"></asp:Label>
+                        </td>
+                        <td align="right">
+                            <asp:LinkButton ID="lnkBtnLogOut" runat="server" Font-Bold="True" Font-Names="Verdana"
+                                Font-Size="11pt" ForeColor="#996600">Logout</asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 10%">
+            </td>
+        </tr>
+        <tr align="center">
+            <td style="width: 10%">
+            </td>
+            <td style="width: 80%">
+                <asp:Image ID="Image1" runat="server" Height="100px" 
+                    ImageUrl="~/Sources/images/helpdeskrefl.jpg" Width="100%" />
+            </td>
+            <td style="width: 10%">
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+            </td>
+            <td align="left">
+                <asp:Menu ID="mnuControl" runat="server" BackColor="#F7F6F3" DynamicHorizontalOffset="2"
+                    Font-Names="Verdana" Font-Size="11pt" ForeColor="#333300" Orientation="Horizontal"
+                    StaticSubMenuIndent="10px" Font-Bold="False" Height="30px">
+                    <StaticSelectedStyle BackColor="#5D7B9D" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <DynamicMenuStyle BackColor="#F7F6F3" />
+                    <DynamicSelectedStyle BackColor="#5D7B9D" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Requisition/frmRequisitionGen.aspx" Text="Requisition"
+                            Value="GenReq"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Requisition/frmUserRequisitionHistoryGen.aspx" Text="Requisition History"
+                            Value="Requisition History"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Requisition/frmApproveRequisitionGen.aspx" Text="Approve Requisition"
+                            Value="AppReqGen"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/frmChangePasswordGen.aspx" Text="Change Password" Value="Change Password">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+            </td>
+            <td style="min-height: 800px">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+            </td>
+            <td>
+                <div id="footer">
+                    <p>
+                        © 2016 Reliance Finance Limited. All rights reserved.</p>
+                </div>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

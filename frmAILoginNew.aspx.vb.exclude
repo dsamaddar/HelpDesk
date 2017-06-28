@@ -1,0 +1,47 @@
+﻿
+Partial Class frmAILoginNew
+    Inherits System.Web.UI.Page
+
+    Dim UserData As New clsUserDataAccess()
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+            Session("UniqueUserID") = ""
+            Session("UserName") = ""
+            Session("LoginUserID") = ""
+            Session("PermittedMenus") = ""
+        End If
+    End Sub
+
+    Protected Sub btnLogin_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnLogin.Click
+
+        Dim UserInfo As New clsUsers()
+
+        UserInfo.UserID = txtUserID.Text
+        UserInfo.UserPassword = txtPassword.Text
+
+        UserInfo = UserData.fnAuthenticateUser(UserInfo)
+
+        If UserInfo.UserID = "" Or UserInfo.UserName = "" Or UserInfo.UniqueUserID = "" Then
+            MessageBox("Incorrect UserID/Password")
+            txtUserID.Text = ""
+            txtPassword.Text = ""
+        Else
+            Session("UniqueUserID") = UserInfo.UniqueUserID
+            Session("UserName") = UserInfo.UserName
+            Session("LoginUserID") = UserInfo.UserID
+            Session("PermittedMenus") = UserInfo.PermittedMenus
+            Response.Redirect("~\frmAIHome.aspx")
+        End If
+
+    End Sub
+
+    Private Sub MessageBox(ByVal strMsg As String)
+        Dim lbl As New System.Web.UI.WebControls.Label
+        lbl.Text = "<script language='javascript'>" & Environment.NewLine _
+                   & "window.alert(" & "'" & strMsg & "'" & ")</script>"
+        Page.Controls.Add(lbl)
+    End Sub
+
+
+End Class
